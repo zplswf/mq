@@ -1,11 +1,11 @@
 package org.activemqstudy.queue;
 
 import javax.jms.Connection;
+import javax.jms.Destination;
 import javax.jms.JMSException;
 import javax.jms.Message;
 import javax.jms.MessageConsumer;
 import javax.jms.MessageListener;
-import javax.jms.Queue;
 import javax.jms.Session;
 import javax.jms.TextMessage;
 
@@ -38,7 +38,7 @@ public class AppConsumer {
 			connection.start();
 			session = connection.createSession(false,
 					Session.CLIENT_ACKNOWLEDGE);
-			Queue queue = session.createQueue(Constanst.QUEUE);
+			Destination queue = session.createQueue(Constanst.QUEUE);
 			createConsumer = session.createConsumer(queue);
 			createConsumer.setMessageListener(new ConsumerListener());
 		} catch (JMSException e) {

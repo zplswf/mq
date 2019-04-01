@@ -16,7 +16,7 @@ import org.apache.activemq.ActiveMQConnectionFactory;
  */
 public final class ConnectionUtil {
 
-	public ConnectionUtil() {
+	private ConnectionUtil() {
 	}
 
 	private final static String URL = "tcp://127.0.0.1:61616";
