@@ -38,8 +38,7 @@ public class AppConsumer1 {
 		try {
 			connection = ConnectionUtil.getInstance().createConnection();
 			connection.start();
-			session = connection.createSession(false,
-					Session.CLIENT_ACKNOWLEDGE);
+			session = connection.createSession(true, Session.AUTO_ACKNOWLEDGE);//开始事务  也可以不用开启事务
 			Topic createTopic = session.createTopic(Constanst.TOPIC);
 			createConsumer = session.createConsumer(createTopic);
 			createConsumer.setMessageListener(new ConsumerListener());

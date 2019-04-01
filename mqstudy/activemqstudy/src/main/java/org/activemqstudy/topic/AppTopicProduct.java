@@ -37,7 +37,7 @@ public class AppTopicProduct
 //		    static final int AUTO_ACKNOWLEDGE = 1;  自动确认模式,不需要客户端进行确认
 //		    static final int CLIENT_ACKNOWLEDGE = 2; 客户端进行确认
 //		    static final int DUPS_OK_ACKNOWLEDGE = 3; 允许重复消息
-			session = connection.createSession(false, Session.CLIENT_ACKNOWLEDGE);//开始事务  也可以不用开启事务
+			session = connection.createSession(true, Session.AUTO_ACKNOWLEDGE);//开始事务  也可以不用开启事务
 			//使用回话对象创建目标对象,包含queue或者topic
 			Destination de = session.createTopic(Constanst.TOPIC);
 			
